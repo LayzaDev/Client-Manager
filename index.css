@@ -1,0 +1,26 @@
+body {
+    padding-top: 3rem;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  a:link, a:visited, a:active {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1em;
+    background-color: #0f647e;
+    border: 0.5px solid #093462;
+    padding: 10px;
+    margin: 5px auto;
+    width: 500px;
+  }
+
+  a:hover {
+    background-color: #dedede;
+  }
+
+  hr {
+    width: 600px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }  
