@@ -6,17 +6,19 @@
     $db_name = "if0_36476911_mysql";
     $db_port = "3306";
 
-    $options = [
-      PDO::ATTR_EMULATE_PREPARES => false,
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ];
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     try {
-      $url = "mysql:host=$db_host;port=$db_port;dbname=$db_name";
-      $pdo = new PDO($url, $db_username, $db_password, $options);
-      return $pdo;
-    } catch(Exception $e){
-      exit("Falha na conexão com o MySQL: " . $e->getMessage());
+      $connection = new mysqli($db_host, $db_username, $db_password, $db_name, $db_port);
+      $connection->set_charset("utf8mb4");
+
+      return $connection;
+
+    } catch (mysqli_sql_exception $e){  
+
+      error_log($e->getMessage());
+      exit("Falha na conexão com o MySQL.");
+
     }
   }
 ?>
