@@ -1,0 +1,43 @@
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+form {
+  width: 45%;
+  background-color: #4e4e4e;
+  opacity: 0.8;
+  height: 80vh;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 35px 40px 0px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 4%;
+}
+
+label {
+  color: #fff;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.button a,
+.button div {
+  margin: 20px;
+}
