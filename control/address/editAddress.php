@@ -60,28 +60,23 @@
         <?php
           while($address = $result->fetch_assoc()){
         ?>
-        <div class="row">
-          <div class="col-sm-4">
+          <div class="col-12">
             <label for="cep" class="form-label">CEP</label>
             <input type="text" name="cep" id="cep" class="form-control" required value="<?php echo htmlspecialchars($address['cep']);?>">
           </div>
-          <div class="col-sm-8">
+          <div class="col-12">
             <label for="street" class="form-label">Logradouro</label>
             <input type="text" name="street" id="street" class="form-control" required value="<?php echo htmlspecialchars($address['street']);?>">
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
+          <div class="col-12">
             <label for="houseNumber" class="form-label">Número</label>
             <input type="number" name="houseNumber" id="houseNumber" class="form-control" required value="<?php echo htmlspecialchars($address['houseNumber']);?>">
           </div>
-          <div class="col-sm-8">
+          <div class="col-12">
             <label for="neighborhood" class="form-label">Bairro</label>
             <input type="text" name="neighborhood" id="neighborhood" class="form-control" required value="<?php echo htmlspecialchars($address['neighborhood']);?>">
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
+          <div class="col-12">
             <label for="uf" class="form-label">Estado</label> 
             <select name="uf" id="uf" class="form-select" required value="<?php echo htmlspecialchars($address['uf']);?>">
               <option value="">Selecione</option>
@@ -114,11 +109,10 @@
               <option value="TO">TO</option>
             </select>
           </div>
-          <div class="col-sm-8">
+          <div class="col-12">
             <label for="city" class="form-label">Cidade</label>
             <input type="text" name="city" id="city" class="form-control" required value="<?php echo htmlspecialchars($address['city']);?>">
           </div>
-        </div>
         <?php
           }
         ?>

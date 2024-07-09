@@ -5,18 +5,19 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-header {
-  height: 12vh;
-  padding: 0.6%;
-}
-
-header, footer {
+header,
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   color: #fff;
   background-color: #ad460a;
+  padding: 1%;
+}
+
+header {
+  padding: 0.6%;
 }
 
 header > h1 {
@@ -24,7 +25,6 @@ header > h1 {
 }
 
 footer {
-  height: 10vh;
   bottom: 0;
   left: 0;
 }

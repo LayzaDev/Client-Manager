@@ -5,6 +5,7 @@
 header {
   width: 100%;
   height: 10vh;
+  padding: 1%;
 }
 
 main {
@@ -20,7 +21,6 @@ main {
 
 form {
   width: 60%;
-  box-sizing: border-box;
   background-color: #393939;
   border-radius: 10px;
   padding: 8px;
@@ -41,7 +41,6 @@ legend {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 5px;
-  box-sizing: border-box;
 }
 
 .item,
@@ -53,7 +52,7 @@ legend {
 }
 
 .item {
-  margin: 15px 10px 15px;
+  margin: 15px 10px;
 }
 
 .specialInputs {
@@ -81,7 +80,7 @@ legend {
 }
 
 .inputs:focus ~ .labelInput,
-.inputs:valid ~ .labelInput{
+.inputs:valid ~ .labelInput {
   top: -20px;
   font-size: 13px;
   color: #f05d08;
@@ -114,8 +113,6 @@ legend {
 .btn a {
   width: 130px;
   text-align: center;
-  align-items: center;
-  text-decoration: none;
   background-color: #cf3e00;
 }
 
@@ -133,183 +130,6 @@ legend {
   background-color: #308c01;
   transition: 0.5s;
 }
-/* * {
-  box-sizing: border-box;
-}
-
-header {
-  width: 100%;
-  height: 10vh;
-}
-
-main {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  background-color: #f4f4f4;
-  width: 100%;
-  padding: 20px;
-}
-
-form {
-  width: 60%;
-  box-sizing: border-box;
-  background-color: #393939;
-  border-radius: 10px;
-  padding: 8px;
-  opacity: 0.7;
-}
-
-fieldset {
-  border: none;
-  margin-top: 20px;
-}
-
-legend {
-  margin: 0 1% 3%;
-  font-size: 1.6rem;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 5px;
-  box-sizing: border-box;
-}
-
-.item,
-.specialInputs {
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  position: relative;
-}
-
-.item {
-  margin: 15px 10px 15px;
-}
-
-.specialInputs {
-  margin: 33px 5px 0px;
-}
-
-.inputs, 
-.selects {
-  color: #fff;
-  font-size: 16px;
-  width: 100%;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-}
-
-.labelInput {
-  font-size: 17px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.inputs:focus ~ .labelInput,
-.inputs:valid ~ .labelInput{
-  top: -20px;
-  font-size: 13px;
-  color: #f05d08;
-  font-weight: 600;
-}
-
-.col-12 { grid-column: span 12; }
-.col-8  { grid-column: span 8; }
-.col-6  { grid-column: span 6; }
-.col-4  { grid-column: span 4; }
-
-.btn {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.btn a, 
-.btn button {
-  font-size: 15px;
-  padding: 10px;
-  margin: 15px;
-  color: #fff;
-  border-radius: 10px;
-  border: 1px solid #000;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn a {
-  width: 130px;
-  text-align: center;
-  align-items: center;
-  text-decoration: none;
-  background-color: #cf3e00;
-}
-
-.btn a:hover {
-  background-color: #f74b02;
-  transition: 0.5s;
-}
-
-.btn button {
-  width: 150px;
-  background-color: #216102;
-}
-
-.btn button:hover {
-  background-color: #308c01;
-  transition: 0.5s;
-
-@media (max-width: 1024px) {
-
-  header, footer {
-    height: 8vh;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  main {
-    height: 100vh;
-  }
-
-  form {
-    width: 80%;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    position: absolute;
-    box-sizing: border-box;
-  }
-  
-  legend {
-    font-size: 1.4rem;
-  }
-
-  .item {
-    margin: 20px 8px 15px;
-  }
-
-  .specialInputs {
-    margin: 39px 8px 0px;
-  }
-
-  footer {
-    position: fixed;
-  }
-
-}
-
-} */
 
 @media (max-width: 1024px) {
   header, footer {
@@ -345,7 +165,7 @@ legend {
   }
 }
 
-@media (max-width: 668px){
+@media (max-width: 668px) {
   header, footer {
     height: 8vh;
   }
@@ -354,23 +174,19 @@ legend {
     font-size: 1.8rem;
   }
 
-  main {
-    height: 100vh;
-  }
-
   form {
     width: 80%;
   }
-  
+
   .container {
-    gap: 0px;
+    gap: 0;
   }
 
   legend {
     margin-left: 1.2%;
     font-size: 1.2rem;
   }
-  
+
   label {
     font-size: 15px;
   }
@@ -384,15 +200,12 @@ legend {
   }
 
   .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput{
+  .inputs:valid ~ .labelInput {
     top: -15px;
     font-size: 11px;
   }
 
-  .col-12 { grid-column: span 12; }
-  .col-8  { grid-column: span 12; }
-  .col-6  { grid-column: span 12; }
-  .col-4  { grid-column: span 12; }
+  .col-12, .col-8, .col-6, .col-4 { grid-column: span 12; }
 
   .btn a, 
   .btn button {
@@ -409,7 +222,6 @@ legend {
 }
 
 @media (max-width: 480px) {
-
   header, footer {
     padding: 0;
     height: 7vh;
@@ -424,36 +236,21 @@ legend {
   }
 
   legend {
-    margin: 1px 1px 2px;
-    font-size: 1rem;
-  }
-
-  main {
-    display: flex;
-    height: 100vh;
-    box-sizing: border-box;
-  }
-
-  form {
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
-    position: absolute;
-  }
-
-  legend {
     font-size: 1.1rem;
     margin-left: 2%;
     padding-bottom: 5px;
   }
-  
-  .item {
-    margin: 10px 8px 10px;
+
+  form {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .specialInputs {
-    margin: 10px 8px 10px;
+  .item, .specialInputs {
+    margin: 10px 8px;
   }
 
   label {
@@ -470,7 +267,7 @@ legend {
   }
 
   .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput{
+  .inputs:valid ~ .labelInput {
     font-size: 12px;
   }
 
@@ -502,9 +299,9 @@ legend {
     margin: 1px 1px 2px;
     font-size: 1rem;
   }
-  
+
   .item {
-    margin: 10px 8px 10px;
+    margin: 10px 8px;
   }
 
   label {
@@ -521,7 +318,7 @@ legend {
   }
 
   .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput{
+  .inputs:valid ~ .labelInput {
     font-size: 11px;
   }
 
@@ -536,3 +333,6 @@ legend {
     font-size: 15px;
   }
 }
+
+
+
