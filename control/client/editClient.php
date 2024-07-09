@@ -59,31 +59,26 @@
       <?php
         while($client = $result->fetch_assoc()){
       ?>
-        <div class="row">
-          <div class="item col-12">
-            <label for="username" class="form-label">Nome completo</label>
-            <input type="text" name="username" class="form-control" id="username" required value="<?php echo htmlspecialchars($client['username']); ?>">
-          </div>
+        <div class="item col-12">
+          <label for="username" class="form-label">Nome completo</label>
+          <input type="text" name="username" class="form-control" id="username" required value="<?php echo htmlspecialchars($client['username']); ?>">
         </div>
-        <div class="row">
-          <div class="item col-12">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" name="email" class="form-control" id="email" required value="<?php echo htmlspecialchars($client['email']); ?>">
-          </div>
+        <div class="item col-12">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" name="email" class="form-control" id="email" required value="<?php echo htmlspecialchars($client['email']); ?>">
         </div>
-        <div class="row">
-          <div class="item col-4">
-            <label for="birthday" class="form-label">Data de nascimento</label>
-            <input type="date" name="birthday" class="form-control" id="birthday" required value="<?php echo htmlspecialchars($client['birthday']); ?>">
-          </div>
-          <div class="item col-4">
-            <label for="cpf" class="form-label">CPF</label>  
-            <input type="text" name="cpf" class="form-control" id="cpf" required value="<?php echo htmlspecialchars($client['cpf']); ?>">
-          </div>
-          <div class="item col-4">
-            <label for="phone" class="form-label">Telefone</label>
-            <input type="tel" name="phone" id="phone" class="form-control" required value="<?php echo htmlspecialchars($client['phone']); ?>">
-          </div>
+      
+        <div class="item col-12">
+          <label for="birthday" class="form-label">Data de nascimento</label>
+          <input type="date" name="birthday" class="form-control" id="birthday" required value="<?php echo htmlspecialchars($client['birthday']); ?>">
+        </div>
+        <div class="item col-12">
+          <label for="cpf" class="form-label">CPF</label>  
+          <input type="text" name="cpf" class="form-control" id="cpf" required value="<?php echo htmlspecialchars($client['cpf']); ?>">
+        </div>
+        <div class="item col-12">
+          <label for="phone" class="form-label">Telefone</label>
+          <input type="tel" name="phone" id="phone" class="form-control" required value="<?php echo htmlspecialchars($client['phone']); ?>">
         </div>
       <?php
         }
