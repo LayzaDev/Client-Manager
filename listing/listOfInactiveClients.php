@@ -29,16 +29,14 @@
     <h1>Listagem de Clientes Inativos</h1>
     <a href="../index.html">Voltar</a>
   </header>
-  <main>
+  <div class=".table-responsive{-sm|-md|-lg|-xl}">
     <table class="table table-striped table-hover">
       <thead>
         <tr>   
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">CPF</th>
-          <th scope="col">Sexo</th>
           <th scope="col">Birthday</th> 
-          <th scope="col">Estado Civil</th>
           <th scope="col">E-mail</th>
           <th scope="col">Telefone</th>
           <th scope="col">Cadastro</th>
@@ -52,14 +50,12 @@
             echo "<td>{$row['id']}</td>";
             echo "<td>{$row['username']}</td>";
             echo "<td>{$row['cpf']}</td>";
-            echo "<td>{$row['sex']}</td>";
             echo "<td>{$row['birthday']}</td>";
-            echo "<td>{$row['maritalStatus']}</td>";
             echo "<td>{$row['email']}</td>";
             echo "<td>{$row['phone']}</td>";
             echo "<td>{$row['register']}</td>";
             echo "<td>
-              <a class='btn btn-sm btn-danger' href='../control/reactivateRegistration.php?id=$row[id]'>
+              <a class='btn btn-sm btn-danger' href='../control/client/reactivateRegistrationClient.php?id=$row[id]'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'>
                   <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z'/>
                 </svg>
@@ -70,7 +66,7 @@
         ?>
       </tbody>
     </table>
-  </main>
+  </div>
   <footer>
     <p>@ By Layza Nauane</p>
   </footer>

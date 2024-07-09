@@ -5,9 +5,7 @@
   // Informações da tabela client
   $username = htmlspecialchars(trim($_POST["username"] ?? ""));
   $cpf = htmlspecialchars(trim($_POST["cpf"] ?? ""));
-  $sex = htmlspecialchars(trim($_POST["sex"] ?? ""));
   $birthday = htmlspecialchars(trim($_POST["birthday"] ?? ""));
-  $maritalStatus = htmlspecialchars(trim($_POST["maritalStatus"] ?? ""));
   $email = htmlspecialchars(trim($_POST["email"] ?? ""));
   $phone = htmlspecialchars(trim($_POST["phone"] ?? ""));
   
@@ -22,7 +20,7 @@
   $city = htmlspecialchars(trim($_POST["city"] ?? ""));
 
   $register = "Ativo";
-  $sql1 = "INSERT INTO client (username, cpf, sex, birthday, maritalStatus, email, phone, register) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+  $sql1 = "INSERT INTO client (username, cpf, birthday, email, phone, register) VALUES (?, ?, ?, ?, ?, ?)";
   $sql2 = "INSERT INTO address_base (cep, street, houseNumber, neighborhood, uf, city, idClient, register) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
   try {
@@ -32,7 +30,7 @@
     if (!$stmt1) {
       throw new Exception("Prepare failed: " . $connectionDB->error);
     }
-    $stmt1->bind_param("ssssssss", $username, $cpf, $sex, $birthday, $maritalStatus, $email, $phone, $register);
+    $stmt1->bind_param("ssssss", $username, $cpf, $birthday, $email, $phone, $register);
     if (!$stmt1->execute()) {
       throw new Exception("Execute failed: " . $stmt1->error);
     }

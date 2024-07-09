@@ -1,5 +1,5 @@
 <?php
-  include_once("../database/conexaoMysql.php");
+  include_once("../../database/conexaoMysql.php");
 
   $connectionDB = mysqlConnect();
 
@@ -30,7 +30,7 @@
 
     if(!$stmt->execute()) throw new Exception("Erro ao executar a consulta SQL");
 
-    header("Location: ../listing/listOfActiveAddresses.php");
+    header("Location: ../../listing/listOfActiveAddresses.php");
     exit();
   }
 
@@ -44,12 +44,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../css/edit.css">
+  <title>Edição de Endereço</title>
+  <link rel="stylesheet" href="../../css/universal.css">
+  <link rel="stylesheet" href="../../css/edit.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
+  <header>
+    <h1>Cadastro</h1>
+  </header>
   <main>
       <form class="form" action="editAddress.php?id=<?php echo $id; ?>" method="POST">
         <h2>Editar Endereço</h2>
@@ -119,7 +123,7 @@
           }
         ?>
         <div class="button">
-          <a href="../listing/listOfActiveAddresses.php" class="btn btn-danger">Cancelar</a>
+          <a href="../../listing/listOfActiveAddresses.php" class="btn btn-danger">Cancelar</a>
           <div>
             <button type="submit" class="btn btn-success">Atualizar</button>
           </div>
@@ -127,6 +131,9 @@
       </form>
     </div>
   </main>
-  <script src="ajax.js"></script>
+  <footer>
+    <p>@ By Layza Nauane</p>
+  </footer>
+  <script src="../ajax.js"></script>
 </body>
 </html>

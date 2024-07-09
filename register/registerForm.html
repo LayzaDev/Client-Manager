@@ -4,55 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
+  <link rel="stylesheet" href="../css/universal.css">
   <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
   <header>
     <h1>Cadastro</h1>
-    <a href="../index.html">Voltar</a>
   </header>
   <main>
-    <form class="form" action="registerClient.php" method="POST">
+    <form action="register.php" method="POST">
       <fieldset>
         <legend>Dados do Cliente</legend>
         <div class="container">
-          <div class="item col-8">
+          <div class="item col-12">
             <input type="text" name="username" class="inputs" id="username" required>
             <label for="username" class="labelInput">Nome completo</label>
           </div>
-          <div class="item col-4">
-            <input type="text" name="cpf" class="inputs" id="cpf" required>
-            <label for="cpf" class="labelInput">CPF</label>
-          </div>
-          <div class="item col-8">
+          <div class="item col-12">
             <input type="email" name="email" class="inputs" id="email" required>
             <label for="email" class="labelInput">E-mail</label>
-          </div>
-          <div class="item col-4">
-            <input type="tel" name="phone" id="phone" class="inputs" required>
-            <label for="phone" class="labelInput">Telefone</label>
-          </div>
-          <div class="specialInputs col-4">
-            <label for="sex" class="specialLabels">Sexo</label>
-            <select name="sex" id="sex" class="selects" required>
-              <option value="">Selecione</option>
-              <option value="F">Feminino</option>
-              <option value="M">Masculino</option>
-            </select>
           </div>
           <div class="item col-4">
             <label for="birthday" class="specialLabels">Data de nascimento</label>
             <input type="date" name="birthday" class="inputs" id="birthday" required>
           </div>
           <div class="specialInputs col-4">
-            <label for="maritalStatus" class="specialLabels">Estado Civil</label>
-            <select name="maritalStatus" class="selects" id="maritalStatus" required>
-              <option selected>Selecione</option>
-              <option value="solteiro">Solteiro</option>
-              <option value="casado">Casado</option>
-              <option value="viuvo">Viúvo</option>
-              <option value="outro">Outro</option>
-            </select>
+            <input type="text" name="cpf" class="inputs" id="cpf" required>
+            <label for="cpf" class="labelInput">CPF</label>
+          </div>
+          <div class="specialInputs col-4">
+            <input type="tel" name="phone" id="phone" class="inputs" required>
+            <label for="phone" class="labelInput">Telefone</label>
           </div>
           <div class="item col-4">
             <input type="text" name="cep" id="cep" class="inputs" required>
@@ -81,14 +63,18 @@
           </div>
         </div>
       </fieldset>
-      <button type="submit" class="btnRegister">Cadastrar</button>
+      <div class="btn">
+        <a href="../index.html">Cancelar</a>
+        <button type="submit" id="btnRegister">Cadastrar</button>
+      </div>
     </form>
   </main>
   <footer>
     <p>@ By Layza Nauane</p>
   </footer>
   <script>
-    document.onsubmit = (e) => {
+    const btn = document.querySelector("#btnRegister")
+    btn.onsubmit = (e) => {
       e.preventDefault();
     }
   </script>

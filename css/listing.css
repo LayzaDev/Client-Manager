@@ -1,18 +1,21 @@
-body {
-  margin: 0;
-  padding: 0;
+* {
   box-sizing: border-box;
 }
 
-header {
-  padding: 1%;
-  width: 100%;
-  background-color: #ad460a;
-  color: #fff;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100vw;
+  padding: 1%;
+  color: #fff;
+  background-color: #ad460a;
 }
 
 header h1 {
@@ -42,22 +45,72 @@ header a:hover {
   transition: 0.5s;
 }
 
-thead {
+.table-responsive {
+  height: 100vh;
+}
+
+thead{
   background-color: #767575;
   opacity: 1;
   color: #fff;
 }
 
-main {
-  height: 100vh;
-  background-color: #fff;
-}
-
 footer {
-  display: flex;  
-  justify-content: center;
-  background-color: #2a2a2a;
-  padding: 1%;
   color: #fff;
+  bottom: 0;
+  text-align: center;
 }
 
+@media (max-width: 770px){
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header a {
+    right: 3%;
+    width: 9%;
+  }
+
+  thead,
+  td{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px){
+  header {
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+    flex-grow: 0;
+  }
+
+  header a {
+    width: 14%;
+    font-size: 0.8rem;
+  }
+
+  table {
+    box-sizing: border-box;
+  }
+
+  thead {
+    display: none;
+  }
+
+  td{
+    font-size: 7px;
+  }
+
+  td .btn {
+    padding: 1px 5px 1px;
+  }
+
+  td a svg {
+    width: 10px;
+    height: 10px;
+  }
+}
