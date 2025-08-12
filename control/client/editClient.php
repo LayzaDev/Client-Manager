@@ -39,61 +39,74 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../css/universal.css">
-  <link rel="stylesheet" href="../../css/edit.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>Editar Cliente</title>
+  <link rel="stylesheet" href="../../css/register.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Cadastro</h1>
-  </header>
-  <main>
-    <form class="form" action="editClient.php?id=<?php echo $id; ?>" method="post">
-      <h2>Editar Cliente</h2>
-      <?php
-        while($client = $result->fetch_assoc()){
-      ?>
-        <div class="item col-12">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Breezy <span>Clientes</span></div>
+    <ul class="menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../register/registerForm.html">Cadastro</a></li>
+      <li><a href="#" class="active">Editar Cliente</a></li>
+      <li><a href="../listing/listOfInactiveClients.php">Clientes inativos</a></li>
+      <li><a href="../listing/listOfActiveAddresses.php">Endereços ativos</a></li>
+      <li><a href="../listing/listOfInactiveAddresses.php">Endereços inativos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Formulário -->
+  <div class="container text-left my-4">
+    <h2 class="fw-bold">Editar</h2>
+    <p class="text-muted">Atualize as informações abaixo e clique em "Atualizar".</p>
+
+    <form class="row g-3" action="editClient.php?id=<?php echo $id; ?>" method="post">
+      <?php while($client = $result->fetch_assoc()) { ?>
+        <div class="col-md-6">
           <label for="username" class="form-label">Nome completo</label>
-          <input type="text" name="username" class="form-control" id="username" required value="<?php echo htmlspecialchars($client['username']); ?>">
+          <input type="text" name="username" id="username" class="form-control" required 
+            value="<?php echo htmlspecialchars($client['username']); ?>">
         </div>
-        <div class="item col-12">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" name="email" class="form-control" id="email" required value="<?php echo htmlspecialchars($client['email']); ?>">
-        </div>
-      
-        <div class="item col-12">
-          <label for="birthday" class="form-label">Data de nascimento</label>
-          <input type="date" name="birthday" class="form-control" id="birthday" required value="<?php echo htmlspecialchars($client['birthday']); ?>">
-        </div>
-        <div class="item col-12">
-          <label for="cpf" class="form-label">CPF</label>  
-          <input type="text" name="cpf" class="form-control" id="cpf" required value="<?php echo htmlspecialchars($client['cpf']); ?>">
-        </div>
-        <div class="item col-12">
+
+        <div class="col-md-6">
           <label for="phone" class="form-label">Telefone</label>
-          <input type="tel" name="phone" id="phone" class="form-control" required value="<?php echo htmlspecialchars($client['phone']); ?>">
+          <input type="tel" name="phone" id="phone" class="form-control" required 
+            value="<?php echo htmlspecialchars($client['phone']); ?>">
         </div>
-      <?php
-        }
-      ?>
-      <div class="button">
-        <a href="../../listing/listOfActiveClients.php" class="btn btn-danger">Cancelar</a>
-        <div>
-          <button type="submit" class="btn btn-success">Atualizar</button>
+
+        <div class="col-md-6">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" name="email" id="email" class="form-control" required 
+            value="<?php echo htmlspecialchars($client['email']); ?>">
         </div>
+
+        <div class="col-md-6">
+          <label for="cpf" class="form-label">CPF</label>
+          <input type="text" name="cpf" id="cpf" class="form-control" required 
+            value="<?php echo htmlspecialchars($client['cpf']); ?>">
+        </div>
+
+        <div class="col-md-6">
+          <label for="birthday" class="form-label">Data de nascimento</label>
+          <input type="date" name="birthday" id="birthday" class="form-control" required 
+            value="<?php echo htmlspecialchars($client['birthday']); ?>">
+        </div>
+      <?php } ?>
+
+      <div class="col-12 d-flex justify-content-center gap-5 mt-4">
+        <a href="../../listing/listOfActiveClients.php" class="btn btn-outline-danger">Cancelar</a>
+        <button type="submit" class="btn btn-success">Atualizar</button>
       </div>
     </form>
-  </main>
-  <footer>
-    <p>@ By Layza Nauane</p>
-  </footer>
-  <script src="../ajax.js"></script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

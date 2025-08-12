@@ -1,338 +1,126 @@
-* {
-  box-sizing: border-box;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  width: 100%;
-  height: 10vh;
-  padding: 1%;
-}
-
-main {
+/* Navbar */
+.navbar {
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  color: #fff;
-  background-color: #f4f4f4;
-  width: 100%;
-  padding: 20px;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
-form {
-  width: 60%;
-  background-color: #393939;
-  border-radius: 10px;
-  padding: 8px;
-  opacity: 0.7;
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-fieldset {
-  border: none;
-  margin-top: 20px;
+.navbar .logo span {
+  color: #6366f1; /* Roxo */
 }
 
-legend {
-  margin: 0 1% 3%;
+.navbar .menu {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.navbar .menu a:hover {
+  background-color: #3565c6;
+  color: white;
+}
+
+.navbar .menu a.active {
+  background-color: #3565c6;
+   color: white;
+}
+
+
+
+/* Conteúdo */
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.form-container h1 {
   font-size: 1.6rem;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 5px;
+.subtitle {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-.item,
-.specialInputs {
+/* Formulário */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 15px;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
-  color: #fff;
-  position: relative;
 }
 
-.item {
-  margin: 15px 10px;
+.form-group.full-width {
+  grid-column: span 2; /* Campo ocupa toda a linha */
 }
 
-.specialInputs {
-  margin: 33px 5px 0px;
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-.inputs, 
-.selects {
-  color: #fff;
-  font-size: 16px;
-  width: 100%;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #fff;
+input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+input:focus {
   outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.2);
 }
 
-.labelInput {
-  font-size: 17px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.inputs:focus ~ .labelInput,
-.inputs:valid ~ .labelInput {
-  top: -20px;
-  font-size: 13px;
-  color: #f05d08;
-  font-weight: 600;
-}
-
-.col-12 { grid-column: span 12; }
-.col-8  { grid-column: span 8; }
-.col-6  { grid-column: span 6; }
-.col-4  { grid-column: span 4; }
-
-.btn {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.btn a, 
-.btn button {
-  font-size: 15px;
-  padding: 10px;
-  margin: 15px;
+/* Botão */
+.btn-primary {
+  background-color: #6366f1;
   color: #fff;
-  border-radius: 10px;
-  border: 1px solid #000;
-  opacity: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 0.95rem;
 }
 
-.btn a {
-  width: 130px;
-  text-align: center;
-  background-color: #cf3e00;
+.btn-primary:hover {
+  background-color: #4f46e5;
 }
 
-.btn a:hover {
-  background-color: #f74b02;
-  transition: 0.5s;
-}
-
-.btn button {
-  width: 150px;
-  background-color: #216102;
-}
-
-.btn button:hover {
-  background-color: #308c01;
-  transition: 0.5s;
-}
-
-@media (max-width: 1024px) {
-  header, footer {
-    height: 8vh;
+/* Responsividade: em telas menores, vira 1 coluna */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* 1 coluna */
   }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  form {
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-  }
-
-  legend {
-    font-size: 1.4rem;
-  }
-
-  .item {
-    margin: 20px 8px;
-  }
-
-  .specialInputs {
-    margin: 39px 8px 0;
-  }
-
-  footer {
-    position: fixed;
+  .form-group.full-width {
+    grid-column: span 1; /* Reseta para 1 coluna */
   }
 }
-
-@media (max-width: 668px) {
-  header, footer {
-    height: 8vh;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  form {
-    width: 80%;
-  }
-
-  .container {
-    gap: 0;
-  }
-
-  legend {
-    margin-left: 1.2%;
-    font-size: 1.2rem;
-  }
-
-  label {
-    font-size: 15px;
-  }
-
-  .item, .specialInputs {
-    margin: 12px 10px 8px;
-  }
-
-  .inputs {
-    font-size: 14px;
-  }
-
-  .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput {
-    top: -15px;
-    font-size: 11px;
-  }
-
-  .col-12, .col-8, .col-6, .col-4 { grid-column: span 12; }
-
-  .btn a, 
-  .btn button {
-    margin: 0 0 15px;
-  }
-
-  .btn a {
-    width: 90px;
-  }
-
-  .btn button {
-    width: 110px;
-  }
-}
-
-@media (max-width: 480px) {
-  header, footer {
-    padding: 0;
-    height: 7vh;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  fieldset {
-    margin-top: 9px;
-  }
-
-  legend {
-    font-size: 1.1rem;
-    margin-left: 2%;
-    padding-bottom: 5px;
-  }
-
-  form {
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .item, .specialInputs {
-    margin: 10px 8px;
-  }
-
-  label {
-    font-size: 14px;
-  }
-
-  .inputs, 
-  .selects {
-    font-size: 13px;
-  }
-
-  .labelInput {
-    font-size: 14px;
-  }
-
-  .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput {
-    font-size: 12px;
-  }
-
-  .btn a, 
-  .btn button {
-    font-size: 14px;
-    margin: 5px 0 10px;
-  }
-
-  .btn a {
-    width: 80px;
-  }
-
-  .btn button {
-    width: 80px;
-  }
-
-  footer {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 390px) {
-  fieldset {
-    margin-top: 6px;
-  }
-
-  legend {
-    margin: 1px 1px 2px;
-    font-size: 1rem;
-  }
-
-  .item {
-    margin: 10px 8px;
-  }
-
-  label {
-    font-size: 12px;
-  }
-
-  .inputs, 
-  .selects {
-    font-size: 11px;
-  }
-
-  .labelInput {
-    font-size: 12px;
-  }
-
-  .inputs:focus ~ .labelInput,
-  .inputs:valid ~ .labelInput {
-    font-size: 11px;
-  }
-
-  .btn a, 
-  .btn button {
-    padding: 8px;
-    font-size: 12px;
-    margin: 3px;
-  }
-
-  footer {
-    font-size: 15px;
-  }
-}
-
-
-
