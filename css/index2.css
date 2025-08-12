@@ -109,3 +109,111 @@ footer {
   color: #777;
   font-size: 0.9rem;
 }
+
+/* Responsividade para tablets (768px até 1024px) */
+@media (max-width: 1024px) {
+  /* Navbar um pouco mais espaçada */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .navbar .logo{
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+
+  .navbar .menu {
+    margin-top: 2rem;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar .menu a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Ajusta título e parágrafo */
+  .main-content h1 {
+    font-size: 2rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  /* Botões com mais espaço e possíveis quebras de linha */
+  .buttons {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .buttons .btn {
+    min-width: 180px;
+  }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  /* Ajusta navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar .menu {
+    margin-top: 2em;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .navbar .menu a {
+    display: block;
+    width: 40%;
+    text-align: left;
+    padding: 4px 8px;
+  }
+
+  /* Ajusta título */
+  .main-content h1 {
+    font-size: 0.90rem;
+  }
+
+  /* Ajusta parágrafo */
+  .main-content p {
+    font-size: 0.90rem;
+    padding: 0 12px;
+  }
+
+  /* Botões em coluna */
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .buttons .btn {
+    width: 70%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-content p {
+    font-size: 0.9rem;
+  }
+}
