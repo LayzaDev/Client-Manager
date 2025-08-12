@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 60px;
+  margin-left: 2rem;
+}
+
+.navbar .logo span {
+  color: #0b5ed7;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding-right: 2rem;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.navbar .menu a:hover {
+  background-color: #0b5ed7;
+  color: white;
+}
+
+.navbar .menu a.active {
+  background-color: #0b5ed7;
+   color: white;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .navbar .logo{
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+
+  .navbar .menu {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar .menu a {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 796px) {
+
+  .navbar {
+    max-width: 90%; /* ocupar toda a largura no mobile */
+    flex-direction: column; /* forçar empilhamento */
+    align-items: stretch;   /* esticar filhos na largura toda */
+  }
+
+  .navbar .menu {
+    flex-direction: column;
+    width: 90%; /* antes era 55%, agora ocupa toda a largura */
+    border-top: 1px solid #eee;
+    gap: 0; /* sem espaço entre os links */
+  }
+
+  .navbar .menu a {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.50em;
+    border-bottom: 1px solid #eee;
+    background-color: transparent;
+    transition: background-color 0.2s;
+  }
+
+  .navbar .menu a:hover {
+    background-color: #f5f5f5; /* leve destaque no hover */
+  }
+
+  .navbar .menu a.active {
+    background-color: #0b5ed7;
+    color: #fff;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar .logo {
+    font-size: 1.8rem;
+  }
+}

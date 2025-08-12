@@ -5,50 +5,6 @@ body {
   padding: 0;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-}
-
-.navbar .logo {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.navbar .logo span {
-  color: #6366f1; /* Roxo */
-}
-
-.navbar .menu {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-}
-
-.navbar .menu a {
-  text-decoration: none;
-  color: #000;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-
-.navbar .menu a:hover {
-  background-color: #3565c6;
-  color: white;
-}
-
-.navbar .menu a.active {
-  background-color: #3565c6;
-   color: white;
-}
-
-
-
 /* Conteúdo */
 .form-container {
   max-width: 800px;
