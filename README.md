@@ -39,7 +39,7 @@
 
 <h3>:wrench: Test the project: </h3>
 
-[Customer Registration and Listing Project]([https://projects.infinityfreeapp.com/Client-Manager])
+[Customer Registration and Listing Project](https://projects.infinityfreeapp.com/Client-Manager)
 
 <h3> :telephone_receiver: Contact</h3>
 
